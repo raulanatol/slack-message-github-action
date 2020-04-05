@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - uses: raulanatol/slack-messages-action@master
+      - uses: raulanatol/slack-messages-github-action@master
         env:
           WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - uses: raulanatol/slack-messages-action@master
+      - uses: raulanatol/slack-messages-github-action@master
         env:
           WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}

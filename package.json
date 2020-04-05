@@ -1,5 +1,5 @@
 {
-  "name": "slack-messages-action",
+  "name": "slack-messages-github-action",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raulanatol/slack-messages-action.git"
+    "url": "git+https://github.com/raulanatol/slack-messages-github-action.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/raulanatol/slack-messages-action/issues"
+    "url": "https://github.com/raulanatol/slack-messages-github-action/issues"
   },
-  "homepage": "https://github.com/raulanatol/slack-messages-action#readme",
+  "homepage": "https://github.com/raulanatol/slack-messages-github-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
