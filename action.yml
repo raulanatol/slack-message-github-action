@@ -1,5 +1,9 @@
 name: Slack Message action
 description: Send messages to a slack channel using webhooks
+author: raulanatol
+branding:
+  color: green
+  icon: message-square
 runs:
   using: node12
   main: index.js
