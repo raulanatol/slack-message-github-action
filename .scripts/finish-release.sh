@@ -47,7 +47,7 @@ function change_version() {
 }
 
 function generate_release_notes() {
-  npx gren release --username=raulanatol --repo=slack-messages-github-action
+  npx gren release --username=raulanatol --repo=slack-message-github-action
 }
 
 git_pull
