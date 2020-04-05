@@ -9,7 +9,7 @@ This action provide a way to sent messages to Slack.
 | `WEBHOOK_URL` | The Slack webhook URL | **TRUE** | |
 | `SLACK_CHANNEL` | The channel that receives the message | **TRUE** | |
 | `MESSAGE` | Message of the notification | **TRUE** | |
-| `STATUS` | Used to draw the color of the message status | **FALSE** | Use ${{job.status}} |
+| `STATUS` | Used to draw the color of the message status | **FALSE** | Use `${{job.status}}` |
 
 ## Example usage
 
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - uses: raulanatol/slack-messages-github-action@master
+      - uses: raulanatol/slack-messages-github-action@v1.0.0
         env:
           WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - uses: raulanatol/slack-messages-github-action@master
+      - uses: raulanatol/slack-messages-github-action@v1.0.0
         env:
           WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}

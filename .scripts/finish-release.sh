@@ -32,18 +32,18 @@ function is_duplicated_tag() {
   fi
 }
 
-function tag_branch() {
-  git tag v"${NEW_VERSION}"
-}
-
 function uncommitted_changes() {
   if [[ $(git status --porcelain) ]]; then
     error "There are uncommitted changes in the working tree."
   fi
 }
 
-function gitPush() {
+function git_push() {
   git push -u origin master && git push --tags
+}
+
+function change_version() {
+  npm version "${NEW_VERSION}"
 }
 
 function generate_release_notes() {
@@ -54,6 +54,6 @@ git_pull
 uncommitted_changes
 check_branch
 is_duplicated_tag
-tag_branch
-gitPush
+change_version
+git_push
 generate_release_notes
