@@ -42,8 +42,13 @@ function generateSlackMessage(text) {
                 author_icon: `http://github.com/${actor}.png?size=32`,
                 title: `CI/CD: ${status}`,
                 title_link: `${commitURL}/checks`,
-                text: `${github.context.payload.head_commit.message}\n\n`,
+                text: text,
                 "fields": [
+                    {
+                        "title": "Commit Message",
+                        "value": github.context.payload.head_commit.message,
+                        "short": false
+                    },
                     {
                         "title": "Ref",
                         "value": github.context.ref,
