@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/raulanatol/slack-message-github-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.5",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
     "node-fetch": "^2.6.1"
   }
