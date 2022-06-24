@@ -33,7 +33,7 @@ function generateSlackMessage(text) {
     if (github.context.payload.head_commit) {
         commitURL = github.context.payload.head_commit.url;
     } else {
-        commitURL = `${github.context.payload.repository.html_url}/commit/${github.context.sha}`
+        commitURL = `${github.context.payload.repository.html_url}/commit/${github.context.sha}`;
     }
     return {
         channel: process.env.SLACK_CHANNEL,
