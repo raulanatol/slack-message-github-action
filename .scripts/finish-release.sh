@@ -46,8 +46,9 @@ function change_version() {
   npm version "${NEW_VERSION}"
 }
 
-function generate_release_notes() {
-  npx gren release --username=raulanatol --repo=slack-message-github-action
+publish() {
+  npm publish --access public
+  git push --tags
 }
 
 git_pull
@@ -55,5 +56,5 @@ uncommitted_changes
 check_branch
 is_duplicated_tag
 change_version
+publish
 git_push
-generate_release_notes
