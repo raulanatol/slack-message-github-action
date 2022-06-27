@@ -29,7 +29,12 @@ function getColor(status) {
 function generateSlackMessage(text) {
     const actor = github.context.actor;
     const status = process.env.STATUS || '';
-    const commitURL = github.context.payload.head_commit.url;
+    let commitURL = '';
+    if (github.context.payload.head_commit) {
+        commitURL = github.context.payload.head_commit.url;
+    } else {
+        commitURL = `${github.context.payload.repository.html_url}/commit/${github.context.sha}`;
+    }
     return {
         channel: process.env.SLACK_CHANNEL,
         username: process.env.BOT_USERNAME,
