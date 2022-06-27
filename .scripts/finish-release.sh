@@ -46,9 +46,15 @@ function change_version() {
   npm version "${NEW_VERSION}"
 }
 
+publish() {
+  npm publish --access public
+  git push --tags
+}
+
 git_pull
 uncommitted_changes
 check_branch
 is_duplicated_tag
 change_version
+publish
 git_push
