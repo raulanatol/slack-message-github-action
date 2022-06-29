@@ -30,10 +30,13 @@ function generateSlackMessage(text) {
     const actor = github.context.actor;
     const status = process.env.STATUS || '';
     let commitURL = '';
+    let commitMessage = '';
     if (github.context.payload.head_commit) {
         commitURL = github.context.payload.head_commit.url;
+        commitMessage = github.context.payload.head_commit.message;
     } else {
         commitURL = `${github.context.payload.repository.html_url}/commit/${github.context.sha}`;
+        commitMessage = github.context.payload.action;
     }
     return {
         channel: process.env.SLACK_CHANNEL,
@@ -51,7 +54,7 @@ function generateSlackMessage(text) {
                 "fields": [
                     {
                         "title": "Commit Message",
-                        "value": github.context.payload.head_commit.message,
+                        "value": commitMessage,
                         "short": false
                     },
                     {
