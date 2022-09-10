@@ -8,22 +8,22 @@ function error() {
 }
 
 if [ $# != 1 ]; then
-  error "Please specify the version number: sh .scripts/finish-release.sh 10.0"
+  error "Please specify the version number: sh .scripts/finish-release.sh patch|minor|major"
 fi
 
 NEW_VERSION=$1
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 function check_branch() {
-  if [ "${BRANCH}" == 'master' ]; then
-    echo "Master branch"
+  if [ "${BRANCH}" == 'main' ]; then
+    echo "Main branch"
   else
     error "Invalid branch name ${BRANCH}"
   fi
 }
 
 function git_pull() {
-  git pull origin master
+  git pull origin main
 }
 
 function is_duplicated_tag() {
@@ -39,7 +39,7 @@ function uncommitted_changes() {
 }
 
 function git_push() {
-  git push -u origin master && git push --tags
+  git push -u origin main && git push --tags
 }
 
 function change_version() {
