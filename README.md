@@ -4,7 +4,7 @@ This action provide a way to sent messages to Slack.
 
 ## Inputs
 
-| Key | Description | Required |    |
+| Key | Description | Required | |
 | --- | ----------- | -------- | -- |
 | `WEBHOOK_URL` | The Slack webhook URL | **TRUE** | |
 | `SLACK_CHANNEL` | The channel that receives the message | **TRUE** | |
@@ -13,7 +13,7 @@ This action provide a way to sent messages to Slack.
 
 ## Example usage
 
-Create the file `workflow.yml` in `.github/workflows` folder. 
+Create the file `workflow.yml` in `.github/workflows` folder.
 
 ```
 name: Slack Message after build
@@ -23,9 +23,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
 
-      - uses: raulanatol/slack-message-github-action@v1.0.0
+      - uses: raulanatol/slack-message-github-action@v1.3.0
         env:
           WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}
@@ -33,8 +33,7 @@ jobs:
           STATUS: ${{job.status}}
 ```
 
-## Send slack message only when jobs failed
-
+## Send Slack message only when jobs failed
 
 ```
 name: Slack Message after job fail
@@ -44,9 +43,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
 
-      - uses: raulanatol/slack-message-github-action@v1.0.0
+      - uses: raulanatol/slack-message-github-action@v1.3.0
         env:
           WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
           SLACK_CHANNEL: ${{secrets.SLACK_NOTIFICATION_CHANNEL}}
