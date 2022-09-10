@@ -8,7 +8,7 @@ function error() {
 }
 
 if [ $# != 1 ]; then
-  error "Please specify the version number: sh .scripts/finish-release.sh patch|minor|major"
+  error "Please specify the version number: sh .scripts/finish-release patch|minor|major"
 fi
 
 NEW_VERSION=$1
